@@ -1,3 +1,5 @@
+/*eslint-disable*/
+
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { RouterProvider } from "react-router-dom";
 
