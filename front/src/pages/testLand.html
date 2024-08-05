@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <title>하나만영 - 하나에서 만나 Young</title>
+    <style>
+      body,
+      p {
+        margin: 0px;
+      }
+      @font-face {
+        font-family: "HANA";
+        src: url(/Hana2-Medium.ttf);
+      }
+      body::-webkit-scrollbar {
+        display: none;
+      }
+      .section {
+        height: 100vh;
+      }
+      .section1 {
+        position: relative;
+      }
+      .section1-gif {
+        height: 100vh;
+        /* background-image: url("./test.gif"); */
+        background-image: url("./main.gif");
+        background-position: center;
+        background-size: cover;
+      }
+      .section1-overlay {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        background-color: black;
+        opacity: 0.3;
+      }
+      .section1-text {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: x-large;
+        color: white;
+        font-family: HANA;
+        font-weight: bold;
+        font-size: 4rem;
+      }
+      .section2 {
+        width: 90%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .section2-top {
+        flex: 1;
+        display: flex;
+      }
+      .section2-btm {
+        flex: 1;
+        display: flex;
+      }
+      .section2-top-left {
+        flex: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end;
+      }
+      .section2-top-right {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: right;
+      }
+      .section2-btm-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .section2-btm-right {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+      .section2-text {
+        font-family: HANA;
+        font-size: 3.5rem;
+        padding: 50px;
+      }
+      .section3 {
+        background-color: #dde3dc;
+      }
+      .content {
+        height: calc(100vh - 125px);
+        text-align: right;
+        position: relative;
+      }
+      .content-text {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        font-family: HANA;
+        font-size: 3.5rem;
+      }
+      .content-btn {
+        margin-top: 75px;
+        font-size: 2rem;
+        border: 2px solid black;
+        padding: 10px 150px 10px 150px;
+        cursor: pointer;
+      }
+      .content-btn:hover {
+        background-color: #3b4159;
+        border: 2px solid #3b4159;
+        color: white;
+        transition: all 0.25s;
+      }
+      .content-btn:not(:hover) {
+        transition: all 0.25s;
+      }
+      .footer {
+        height: 125px;
+        width: 100%;
+        background-color: #2e675d;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="section1">
+      <div class="section1-gif"></div>
+      <div class="section1-overlay"></div>
+      <div class="section1-text">
+        <div>건강한 금융 습관을 원해?</div>
+        <div style="color: #23e0be">하나에서 만나 Young</div>
+        <div
+          id="btn1"
+          style="width: 50p; height: 50px; font-size: 2rem; cursor: pointer"
+        >
+          버튼
+        </div>
+      </div>
+    </div>
+    <div class="section" style="background-color: #ebefe9">
+      <div class="section2">
+        <div class="section2-top">
+          <div id="section2-ex1" class="section2-top-left animate__animated">
+            <div
+              style="
+                background-color: white;
+                width: 90%;
+                height: 90%;
+                border-radius: 2.5%;
+              "
+            ></div>
+          </div>
+          <div
+            id="section2-text1"
+            class="section2-top-right section2-text animate__animated"
+          >
+            <p>챌린지를 통한</p>
+            <p>재미있는 금융 습관 형성</p>
+          </div>
+        </div>
+        <div class="section2-btm">
+          <div
+            id="section2-text2"
+            class="section2-btm-left section2-text animate__animated"
+          >
+            <p>가계부와</p>
+            <p>소비계획 작성까지</p>
+            <p
+              id="btn2"
+              style="font-size: 1rem; text-align: right; cursor: pointer"
+            >
+              버튼
+            </p>
+          </div>
+          <div id="section2-ex2" class="section2-btm-right animate__animated">
+            <div
+              style="
+                background-color: white;
+                width: 90%;
+                height: 90%;
+                border-radius: 2.5%;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section3 section">
+      <div class="content">
+        <div id="content-text" class="content-text">
+          <div>청소년을 위한 금융 서비스</div>
+          <div>지금 시작하세요</div>
+          <div id="btn3" class="content-btn">시작하기</div>
+        </div>
+        <img src="./test2.png" height="100%" alt="" />
+      </div>
+      <div class="footer">
+        <div style="color: white; font-family: HANA">대충 Footer</div>
+      </div>
+    </div>
+
+    <script>
+      let currentHeight = window.innerHeight;
+      window.addEventListener("resize", () => {
+        currentHeight = window.innerHeight;
+      });
+      window.addEventListener("scroll", () => {
+        const scrollY = window.scrollY;
+        const ex1 = document.querySelector("#section2-ex1");
+        const ex2 = document.querySelector("#section2-ex2");
+        const text1 = document.querySelector("#section2-text1");
+        const text2 = document.querySelector("#section2-text2");
+
+        // console.log("scrollY: " + scrollY);
+        // console.log("currentHeight: " + currentHeight);
+        if (scrollY <= 0) {
+          ex1.classList.remove("animate__fadeInLeft");
+          ex2.classList.remove("animate__fadeInRight");
+          text1.classList.remove("animate__fadeIn", "animate__slower");
+          text2.classList.remove("animate__fadeIn", "animate__slower");
+        } else {
+          ex1.classList.add("animate__fadeInLeft");
+          ex2.classList.add("animate__fadeInRight");
+          text1.classList.add("animate__fadeIn", "animate__slower");
+          text2.classList.add("animate__fadeIn", "animate__slower");
+        }
+      });
+      const btn1 = document.querySelector("#btn1");
+      btn1.addEventListener("click", () => {
+        window.scrollTo({
+          top: currentHeight,
+          behavior: "smooth",
+        });
+      });
+      const btn2 = document.querySelector("#btn2");
+      btn2.addEventListener("click", () => {
+        window.scrollTo({
+          top: currentHeight * 2,
+          behavior: "smooth",
+        });
+      });
+      const btn3 = document.querySelector("#btn3");
+      btn3.addEventListener("click", () => {
+        window.location.href = "http://localhost:3000/";
+      });
+    </script>
+  </body>
+</html>
