@@ -19,7 +19,7 @@ function Land() {
         behavior: "smooth",
         block: "start",
       });
-      setTimeout(() => setManualScroll(false), 500); // 500ms 동안 스크롤 제한
+      setTimeout(() => setManualScroll(false), 100); // 500ms 동안 스크롤 제한
     },
     [sectionRefs]
   );
