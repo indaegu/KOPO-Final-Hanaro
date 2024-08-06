@@ -101,6 +101,7 @@ function Land() {
         <div className="section2-text">
           <h3>스마트한 소비</h3>
           <h1>간편한 카드 실적 및 카드 혜택 관리</h1>
+          <span>모든 카드의 실적 및 혜택을 손쉽게 관리하세요</span>
         </div>
         <img
           src={process.env.PUBLIC_URL + "/img/3d-card-section1.png"}
@@ -125,7 +126,40 @@ function Land() {
         </div>
       </div>
       <div ref={sectionRefs[2]} className="section section3">
-        3번 영역 : 위치기반 카드 혜택 지도, 카드 조합 및 카드 추천
+        <div className="section3-container1">
+          <div className="section3-text1">
+            <h3>편리한 소비</h3>
+            <h1>위치기반 카드 혜택 지도</h1>
+            <span>
+              내 주변 가장 많은 혜택을 받는 가맹점을 선택하고 추천카드로
+              결제하세요
+            </span>
+          </div>
+          <div className="section3-img1">
+            <img
+              src={process.env.PUBLIC_URL + "/img/3d-map-section3.png"}
+              className="section3-img"
+            />
+          </div>
+        </div>
+        <div className="section3-container2">
+          <div className="section3-img2">
+            <img
+              src={
+                process.env.PUBLIC_URL + "/img/3d-cardrecommand-section3.png"
+              }
+              className="section3-img"
+            />
+          </div>
+          <div className="section3-text2">
+            <h3>카드</h3>
+            <h1>카드 조합 및 카드 추천</h1>
+            <span>
+              내 소비 내역을 기반으로 가장 적합한 카드를 추천 받아보세요
+            </span>
+          </div>
+        </div>
+
         <div
           className="arrowDown"
           style={{
