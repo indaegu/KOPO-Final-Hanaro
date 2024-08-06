@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import Navbar from "../components/NavBar";
 import SectionStepper from "../components/SectionStepper";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
-import { Center } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
+import "../style/hover.css";
 
 function Land() {
   const [activeStep, setActiveStep] = useState(1);
@@ -17,8 +18,11 @@ function Land() {
 
   const scrollToSection = useCallback(
     (index) => {
-      // console.log(`Scrolling to section: ${index}`);
+      console.log(`Scrolling to section: ${index}`);
       setManualScroll(true);
+      setTimeout(() => {
+        loadAnimation(index);
+      }, 200);
       sectionRefs[index].current.scrollIntoView({
         behavior: "smooth",
         block: "end",
@@ -30,10 +34,7 @@ function Land() {
 
   const handleScroll = useCallback(() => {
     if (manualScroll) return;
-    // console.log("Handling scroll...");
-
     const scrollPosition = window.scrollY + window.innerHeight / 2;
-    // console.log(`Scroll position: ${scrollPosition}`);
 
     let foundStep = sectionRefs.findIndex((ref) => {
       return (
@@ -50,15 +51,55 @@ function Land() {
       setActiveStep(foundStep + 1);
       scrollToSection(foundStep);
     }
-  }, [activeStep, manualScroll, scrollToSection, sectionRefs]);
+  });
 
   useEffect(() => {
-    const throttledScrollHandler = throttle(handleScroll, 100);
+    const throttledScrollHandler = throttle(handleScroll, 300);
     window.addEventListener("scroll", throttledScrollHandler);
     return () => {
       window.removeEventListener("scroll", throttledScrollHandler);
     };
-  }, [handleScroll]);
+  });
+
+  function loadAnimation(index) {
+    if (index === 1) {
+      const section2AnimationElement = document.querySelector(
+        ".section2-container"
+      );
+      if (section2AnimationElement) {
+        section2AnimationElement.classList.add("fadeup-animation");
+      }
+    } else if (index === 2) {
+      const section3AnimationElement = document.querySelector(
+        ".section3-container1"
+      );
+      const section3AnimationElement2 = document.querySelector(
+        ".section3-container2"
+      );
+      if (section3AnimationElement && section3AnimationElement2) {
+        section3AnimationElement.classList.add("fadeleft-animation");
+        section3AnimationElement2.classList.add("faderight-animation");
+      }
+    } else if (index === 3) {
+      const section4AnimationElement = document.querySelector(
+        ".section4-container1"
+      );
+      const section4AnimationElement2 = document.querySelector(
+        ".section4-container2"
+      );
+      if (section4AnimationElement) {
+        section4AnimationElement.classList.add("faderight-animation");
+        section4AnimationElement2.classList.add("fadeleft-animation");
+      }
+    } else if (index === 4) {
+      const section5AnimationElement = document.querySelector(
+        ".section5-container"
+      );
+      if (section5AnimationElement) {
+        section5AnimationElement.classList.add("fadein-animation");
+      }
+    }
+  }
 
   return (
     <>
@@ -98,15 +139,18 @@ function Land() {
         </div>
       </div>
       <div ref={sectionRefs[1]} className="section section2">
-        <div className="section2-text">
-          <h3>스마트한 소비</h3>
-          <h1>간편한 카드 실적 및 카드 혜택 관리</h1>
-          <span>모든 카드의 실적 및 혜택을 손쉽게 관리하세요</span>
+        <div className="section2-container">
+          <div className="section2-text">
+            <h3 style={{ color: "rgba(62, 191, 171, 1)" }}>스마트한 소비</h3>
+            <h1>간편한 카드 실적 및 카드 혜택 관리</h1>
+            <span>모든 카드의 실적 및 혜택을 손쉽게 관리하세요</span>
+          </div>
+          <img
+            src={process.env.PUBLIC_URL + "/img/3d-card-section2.png"}
+            className="section2-img"
+          />
         </div>
-        <img
-          src={process.env.PUBLIC_URL + "/img/3d-card-section1.png"}
-          className="section2-img"
-        />
+
         <div
           className="arrowDown"
           style={{
@@ -125,10 +169,10 @@ function Land() {
           />
         </div>
       </div>
-      <div ref={sectionRefs[2]} className="section section3">
+      <div ref={sectionRefs[2]} className="section section3 ">
         <div className="section3-container1">
           <div className="section3-text1">
-            <h3>편리한 소비</h3>
+            <h3 style={{ color: "rgba(62, 191, 171, 1)" }}>편리한 소비</h3>
             <h1>위치기반 카드 혜택 지도</h1>
             <span>
               내 주변 가장 많은 혜택을 받는 가맹점을 선택하고 추천카드로
@@ -142,7 +186,7 @@ function Land() {
             />
           </div>
         </div>
-        <div className="section3-container2">
+        <div className="section3-container2 ">
           <div className="section3-img2">
             <img
               src={
@@ -152,7 +196,7 @@ function Land() {
             />
           </div>
           <div className="section3-text2">
-            <h3>카드</h3>
+            <h3 style={{ color: "rgba(62, 191, 171, 1)" }}>현명한 선택</h3>
             <h1>카드 조합 및 카드 추천</h1>
             <span>
               내 소비 내역을 기반으로 가장 적합한 카드를 추천 받아보세요
@@ -178,8 +222,33 @@ function Land() {
           />
         </div>
       </div>
-      <div ref={sectionRefs[3]} className="section section4">
-        4번 영역 : 실시간 소비진단, 신용카드 vs 체크카드 소득공제 황금비율 제시
+      <div ref={sectionRefs[3]} className="section section4 ">
+        <div className="section4-container1">
+          <div className="section3-text1">
+            <h3 style={{ color: "rgba(62, 191, 171, 1)" }}>현명한 소비</h3>
+            <h1>실시간 소비 진단</h1>
+            <span>내 소비에 대한 혜택 점수를 실시간으로 확인해보세요</span>
+          </div>
+          <div className="section3-img1">
+            <img
+              src={process.env.PUBLIC_URL + "/img/3d-medical-chart.png"}
+              className="section3-img"
+            />
+          </div>
+        </div>
+        <div className="section4-container2 ">
+          <div className="section3-img2">
+            <img
+              src={process.env.PUBLIC_URL + "/img/3d-dimensinal.png"}
+              className="section3-img"
+            />
+          </div>
+          <div className="section3-text2">
+            <h3 style={{ color: "rgba(62, 191, 171, 1)" }}>최적의 결제</h3>
+            <h1>신용,체크카드 황금비율</h1>
+            <span>내 소득을 기준으로 소득공제 황금비율을 알아보세요</span>
+          </div>
+        </div>
         <div
           className="arrowDown"
           style={{
@@ -198,8 +267,18 @@ function Land() {
           />
         </div>
       </div>
-      <div ref={sectionRefs[4]} className="section section5">
-        5번 영역 : 회원가입하기 or 로그인하기
+      <div ref={sectionRefs[4]} className="section section5 ">
+        <div className="section5-container">
+          <h1 style={{ fontSize: "50px" }}>지금 바로 시작해보세요</h1>
+          <br />
+          <Link
+            className="hvr-shutter-in-vertical"
+            to="/login"
+            style={{ fontSize: "30px" }}
+          >
+            시작하기
+          </Link>
+        </div>
       </div>
     </>
   );

@@ -89,8 +89,14 @@ body {
 .hamburger-menu img {
   border-radius: 10px;
 }
+
 .hamburger-menu {
   transition: all 0.5s ease-in-out;
+  cursor: pointer; /* 마우스 호버 시 포인터 모양 변경 */
+}
+
+.hamburger-menu:hover {
+  transform: rotate(90deg) scale(1.1); /* 회전 및 크기 조정 */
 }
 
 .nav-menu {
@@ -223,7 +229,6 @@ body {
   }
 }
 
-/* 애니메이션 키프레임 정의 */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -256,7 +261,9 @@ body {
 }
 .section2-img {
   height: 50vh;
+  filter: drop-shadow(5px 5px 5px #0000007c);
 }
+
 .section3 {
   background-color: rgba(245, 250, 251, 1);
 }
@@ -281,14 +288,48 @@ body {
 .section3-img1 img,
 .section3-img2 img {
   width: 40vh;
+  filter: drop-shadow(5px 5px 5px #0000007c);
 }
 
 .section4 {
   background-color: rgba(2555, 255, 255, 1);
 }
+
+.section4-container1,
+.section4-container2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px 0px;
+}
+
 .section5 {
-  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000000; /* 배경색 */
+  text-align: center;
+  color: #ffffff;
+  font-family: "Arial", sans-serif;
+  padding: 20px;
+}
+
+.section5 h1 {
+  margin-bottom: 20px; /* 제목과 링크 사이의 공간 */
+  font-size: 2.5rem; /* 크기 조정 */
+  color: #ffffff; /* 제목 색상 */
+}
+
+.section5 a {
+  padding: 10px 20px;
+  font-size: 1.2rem;
   color: white;
+  border-radius: 5px; /* 둥근 모서리 */
+  text-decoration: none; /* 밑줄 제거 */
+  transition: background-color 0.3s ease-in-out; /* 부드러운 전환 효과 */
 }
 
 .visible {
@@ -302,4 +343,78 @@ body {
 
 .css-v5nzme {
   --stepper-accent-color: rgba(62, 191, 171, 1) !important;
+}
+
+.fadeup-animation {
+  animation: fadeUp 1s ease-out forwards;
+  visibility: hidden; /* 시작 시 보이지 않게 설정 */
+  opacity: 0;
+}
+
+.fadeleft-animation {
+  animation: fadeLeft 1s ease-out forwards;
+  visibility: hidden; /* 시작 시 보이지 않게 설정 */
+  opacity: 0;
+}
+
+.faderight-animation {
+  animation: fadeRight 1s ease-out forwards;
+  visibility: hidden; /* 시작 시 보이지 않게 설정 */
+  opacity: 0;
+}
+
+.fadein-animation {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+.page-enter {
+  animation: fadeIn 0.5s forwards;
+}
+
+.page-exit {
+  animation: fadeOut 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

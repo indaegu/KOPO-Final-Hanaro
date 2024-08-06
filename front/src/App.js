@@ -1,31 +1,43 @@
-/*eslint-disable*/
-
-// css
-import "./style/App.css";
-
 // dependencies
 import React from "react";
-import {
-  Routes,
-  Route,
-  Link,
-  useNavigate,
-  Outlet,
-  useParams,
-} from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
-//pages
+// pages
 import Land from "./pages/Land";
 import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
+
+// page wrapper
+import PageWrapper from "./components/PageWrapper"; // 추가
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login></Login>} />
-        <Route path="/" element={<Land></Land>} />
-        <Route path="*" element={<NotFound></NotFound>} />
+        <Route
+          path="/login"
+          element={
+            <PageWrapper>
+              <Login />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <PageWrapper>
+              <Land />
+            </PageWrapper>
+          }
+        />
+        <Route
+          path="*"
+          element={
+            <PageWrapper>
+              <NotFound />
+            </PageWrapper>
+          }
+        />
       </Routes>
     </div>
   );
