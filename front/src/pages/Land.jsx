@@ -272,7 +272,7 @@ function Land() {
           <h1 style={{ fontSize: "50px" }}>지금 바로 시작해보세요</h1>
           <br />
           <Link
-            className="hvr-shutter-in-vertical"
+            className="hvr-underline-from-center"
             to="/login"
             style={{ fontSize: "30px" }}
           >

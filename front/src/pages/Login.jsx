@@ -28,7 +28,7 @@ function Login() {
 
   return (
     <>
-      <div id="container" className={styles.container}>
+      <div id="container" className={"page-enter " + styles.container}>
         <div className={styles.row}>
           <div
             className={`${styles.col} ${styles["align-items-center"]} ${styles["flex-col"]} ${styles["sign-up"]}`}

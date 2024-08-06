@@ -2331,7 +2331,7 @@
   left: 51%;
   right: 51%;
   bottom: 0;
-  background: #2098d1;
+  background: #ffffff;
   height: 4px;
   -webkit-transition-property: left, right;
   transition-property: left, right;
@@ -4441,5 +4441,3 @@
   width: 25px;
   height: 25px;
 }
-
-/*# sourceMappingURL=hover.css.map */
