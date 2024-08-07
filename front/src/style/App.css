@@ -2,6 +2,7 @@
   font-family: "hana"; /* 사용할 폰트의 이름을 정의 */
   src: url(../fonts/Hana2-Medium.ttf); /* 폰트 파일의 위치 */
 }
+
 /* 기본 앱 스타일 */
 
 .App {
@@ -75,7 +76,21 @@ body {
   position: fixed;
   z-index: 100;
   top: 0; /* 상단 고정 */
-  height: 60px; /* 네비게이션 바의 높이 명시 */
+  height: 80px; /* 네비게이션 바의 높이 명시 */
+}
+
+.navbar-main {
+  width: 100%;
+  background-color: rgba(51, 51, 51, 1);
+  color: white;
+  padding: 30px 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+  top: 0; /* 상단 고정 */
+  height: 80px; /* 네비게이션 바의 높이 명시 */
 }
 
 .logo img,
@@ -313,7 +328,6 @@ body {
   background-color: #000000; /* 배경색 */
   text-align: center;
   color: #ffffff;
-  font-family: "Arial", sans-serif;
   padding: 20px;
 }
 
@@ -334,15 +348,6 @@ body {
 
 .visible {
   opacity: 1;
-}
-
-.css-kq5oaw[data-status="complete"] {
-  background-color: rgba(62, 191, 171, 1) !important;
-  color: var(--chakra-colors-chakra-inverse-text);
-}
-
-.css-v5nzme {
-  --stepper-accent-color: rgba(62, 191, 171, 1) !important;
 }
 
 .fadeup-animation {
@@ -393,14 +398,6 @@ body {
   }
 }
 
-.page-enter {
-  animation: fadeIn 0.5s forwards;
-}
-
-.page-exit {
-  animation: fadeOut 0.5s forwards;
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -420,13 +417,17 @@ body {
 }
 
 .page-enter {
-  opacity: 0;
-  transform: scale(0.99);
+  animation: fadeIn 1s forwards;
 }
+
+.page-exit {
+  animation: fadeOut 1s forwards;
+}
+
 .page-enter-active {
   opacity: 1;
   transform: scale(1);
-  transition: opacity 300ms, transform 300ms;
+  transition: opacity 500ms, transform 500ms;
 }
 .page-exit {
   opacity: 1;
@@ -434,4 +435,19 @@ body {
 .page-exit-active {
   opacity: 0;
   transition: opacity 300ms;
+}
+
+/* 차크라 css 직접 */
+.css-kq5oaw[data-status="complete"] {
+  background-color: rgba(62, 191, 171, 1) !important;
+  color: var(--chakra-colors-chakra-inverse-text);
+}
+
+.css-v5nzme {
+  --stepper-accent-color: rgba(62, 191, 171, 1) !important;
+}
+
+.css-9fgtzh,
+.css-moi7bl {
+  font-family: "hana";
 }

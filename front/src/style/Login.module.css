@@ -1,4 +1,8 @@
 /* Login.module.css */
+@font-face {
+  font-family: "hana"; /* 사용할 폰트의 이름을 정의 */
+  src: url(../fonts/Hana2-Medium.ttf); /* 폰트 파일의 위치 */
+}
 
 .form-button {
   cursor: pointer;
@@ -19,7 +23,7 @@
   overflow: hidden;
   height: 100vh;
   overflow: hidden;
-  font-family: "Poppins", sans-serif;
+  font-family: "hana";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
