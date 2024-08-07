@@ -29,7 +29,7 @@ import { RiLoginBoxLine } from "react-icons/ri";
 
 function NavbarMain() {
   let [font] = useState("text-black");
-  let [logoColor] = useState("black-image");
+  let [logoColor] = useState("black-image"); // black-image로 하면 흑백 로고로 변경됨, 기존은 비워둬도 됨
   let [hamburgerColor] = useState("black-image");
 
   let navigate = useNavigate();

@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 import styles from "../style/Login.module.css";
-import NavBarMain from "../components/NavBarMain.jsx";
 import { useNavigate } from "react-router-dom";
 function Login() {
   let navigate = useNavigate();

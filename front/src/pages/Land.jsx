@@ -6,6 +6,7 @@ import SectionStepper from "../components/SectionStepper";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "../style/hover.css";
+import Footer from "../components/Footer";
 
 function Land() {
   const [activeStep, setActiveStep] = useState(1);
@@ -104,7 +105,7 @@ function Land() {
   }
 
   return (
-    <>
+    <div className="page-enter">
       <Navbar />
       <SectionStepper activeStep={activeStep} />
       <div ref={sectionRefs[0]} className="section section1">
@@ -282,7 +283,8 @@ function Land() {
           </Link>
         </div>
       </div>
-    </>
+      <Footer></Footer>
+    </div>
   );
 }
 
