@@ -92,7 +92,7 @@ function Login() {
                 <button
                   className={styles["form-button"]}
                   onClick={() => {
-                    navigate("/main");
+                    navigate("/");
                   }}
                 >
                   로그인

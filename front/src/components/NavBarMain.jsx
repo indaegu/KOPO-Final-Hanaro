@@ -29,59 +29,61 @@ import { RiLoginBoxLine } from "react-icons/ri";
 
 function NavbarMain() {
   let [font] = useState("text-black");
-  let [logoColor] = useState("black-image"); // black-image로 하면 흑백 로고로 변경됨, 기존은 비워둬도 됨
+  let [logoColor] = useState("defalt"); // black-image로 하면 흑백 로고로 변경됨, 기존은 비워둬도 됨
   let [hamburgerColor] = useState("black-image");
 
   let navigate = useNavigate();
   return (
-    <nav className="navbar-main">
-      <div
-        className="logo"
-        onClick={() => {
-          navigate("/");
-        }}
-      >
-        <img
-          className={"logo-img " + logoColor}
-          src={process.env.PUBLIC_URL + "./img/logo192.png"}
-          alt="Logo"
-        />
-      </div>
-      <div className="nav-menu">
-        <Link to="/mycard" className={"nav-link " + font}>
-          <NavLinkImage
-            text="내 카드"
-            imgUrl={process.env.PUBLIC_URL + "/img/credit-card-png.png"}
-            font={font}
-            icon={0}
+    <div className="navbar-wrapper">
+      <nav className="navbar-main">
+        <div
+          className="logo"
+          onClick={() => {
+            navigate("/");
+          }}
+        >
+          <img
+            className={"logo-img " + logoColor}
+            src={process.env.PUBLIC_URL + "./img/logo192.png"}
+            alt="Logo"
           />
-        </Link>
-        <Link to="/findcard" className={"nav-link " + font}>
-          <NavLinkImage
-            text="카드 찾기"
-            imgUrl={process.env.PUBLIC_URL + "./img/magnifying-png.png"}
-            icon={1}
-          />
-        </Link>
-        <Link to="/map" className={"nav-link " + font}>
-          <NavLinkImage
-            text="혜택 지도"
-            imgUrl={process.env.PUBLIC_URL + "./img/map-png.png"}
-            icon={2}
-          />
-        </Link>
-        <Link to="/login" className={"nav-link " + font}>
-          <NavLinkImage
-            text="로그인"
-            imgUrl={process.env.PUBLIC_URL + "./img/sign-in-png.png"}
-            icon={3}
-          />
-        </Link>
-      </div>
-      <div className={"hamburger-menu " + hamburgerColor}>
-        <HamburgerDrawer />
-      </div>
-    </nav>
+        </div>
+        <div className="nav-menu">
+          <Link to="/mycard" className={"nav-link " + font}>
+            <NavLinkImage
+              text="내 카드"
+              imgUrl={process.env.PUBLIC_URL + "/img/credit-card-png.png"}
+              font={font}
+              icon={0}
+            />
+          </Link>
+          <Link to="/findcard" className={"nav-link " + font}>
+            <NavLinkImage
+              text="카드 찾기"
+              imgUrl={process.env.PUBLIC_URL + "./img/magnifying-png.png"}
+              icon={1}
+            />
+          </Link>
+          <Link to="/map" className={"nav-link " + font}>
+            <NavLinkImage
+              text="혜택 지도"
+              imgUrl={process.env.PUBLIC_URL + "./img/map-png.png"}
+              icon={2}
+            />
+          </Link>
+          <Link to="/login" className={"nav-link " + font}>
+            <NavLinkImage
+              text="로그인"
+              imgUrl={process.env.PUBLIC_URL + "./img/sign-in-png.png"}
+              icon={3}
+            />
+          </Link>
+        </div>
+        <div className={"hamburger-menu " + hamburgerColor}>
+          <HamburgerDrawer />
+        </div>
+      </nav>
+    </div>
   );
 }
 

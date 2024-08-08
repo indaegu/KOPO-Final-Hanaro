@@ -27,7 +27,7 @@ function Footer() {
             </span>
             <span>그룹사간 고객정보 제공내역 조회</span>
             <span>자주하는 질문</span>
-            <span>서울특별시 중구 을지로 **</span>
+            <span>인천광역시 서구 청라동 **</span>
             <span>
               <b>개발자 성창민</b>
             </span>

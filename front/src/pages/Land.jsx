@@ -1,12 +1,12 @@
 /*eslint-disable*/
 
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import Navbar from "../components/NavBar";
 import SectionStepper from "../components/SectionStepper";
 import { MdKeyboardDoubleArrowDown } from "react-icons/md";
 import { Link } from "react-router-dom";
 import "../style/hover.css";
 import Footer from "../components/Footer";
+import Navbar from "../components/NavBar";
 
 function Land() {
   const [activeStep, setActiveStep] = useState(1);
@@ -21,7 +21,6 @@ function Land() {
 
   const scrollToSection = useCallback(
     (index) => {
-      console.log(`Scrolling to section: ${index}`);
       setManualScroll(true);
       setTimeout(() => {
         loadAnimation(index);
@@ -47,10 +46,7 @@ function Land() {
       );
     });
 
-    // console.log(`Found step: ${foundStep}`);
-
     if (foundStep !== -1 && foundStep !== activeStep - 1) {
-      // console.log(`Setting active step: ${foundStep + 1}`);
       setActiveStep(foundStep + 1);
       scrollToSection(foundStep);
     }
@@ -112,7 +108,7 @@ function Land() {
         <div className="overlay"></div>
         <div className="section1-text">
           <h1>
-            스마트한 소비로 가는길 <b>하나로</b>{" "}
+            스마트한 소비로 가는길 <b>하나로</b>
           </h1>
           <div
             className="arrowDown"
@@ -149,7 +145,7 @@ function Land() {
             <span>모든 카드의 실적 및 혜택을 손쉽게 관리하세요</span>
           </div>
           <img
-            src={process.env.PUBLIC_URL + "/img/3d-card-section2.png"}
+            src={process.env.PUBLIC_URL + "./img/3d-card-section2.png"}
             className="section2-img"
           />
         </div>

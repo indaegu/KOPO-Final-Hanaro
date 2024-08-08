@@ -1,0 +1,197 @@
+@font-face {
+  font-family: "notosans"; /* 사용할 폰트의 이름을 정의 */
+  src: url(../fonts/NotoSansKR-Medium.ttf); /* 폰트 파일의 위치 */
+}
+
+/* Main.css */
+.main-back {
+  background-color: rgba(245, 250, 251, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+.main-container {
+  /* background-color: rgba(245, 250, 251, 1); */
+  background-color: rgb(255, 255, 255);
+  width: 80%;
+  max-width: 1280px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+.main-inner-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* AlertBenefit */
+.alertbenefit-container {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 70vh;
+  border-radius: 15px;
+  margin: 0px 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2); /* 전체적으로 은은하게 퍼지는 그림자 */
+}
+.alertbenfit-title-container {
+  margin-top: 20px;
+  font-size: 18px;
+}
+.alertbenfit-title-container span {
+  margin-left: 25px;
+  font-size: 18px;
+}
+
+.alertbenefit-card-img {
+  width: 30%;
+  object-fit: contain;
+}
+.alertbenefit-card-container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 15px;
+  /* top: -8vh; */
+}
+.alertbenefit-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding-top: 15px;
+}
+.alertbenefit-text-container h1 {
+  color: rgb(238, 46, 8);
+  font-size: 27px;
+}
+
+.alertbenefit-text-container span {
+  font-size: 20px;
+  padding-bottom: 5px;
+  font-family: "notosans";
+}
+.alertbenefit-price-container {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+/* BenefitBestWorst */
+.benefitbestworst-container {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 70vh;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 15px;
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2); /* 전체적으로 은은하게 퍼지는 그림자 */
+}
+.benefitbestworst-top {
+  margin-top: 20px;
+  min-width: 90%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 19px;
+  margin-left: 10px;
+}
+
+.benefitbestworst-top a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+}
+
+.benefitbestworst-middle {
+  margin: 60px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.benefitbestworst-middle .benefitbestworst-benefit {
+  font-size: 30px;
+  color: rgb(8, 111, 238);
+}
+.benefitbestworst-middle .benefitbestworst-price {
+  font-size: 50px;
+}
+
+.benefitbestworst-slidebar {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.chakra-tabs {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.payment-item-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.payment-item-content-price {
+  text-align: right;
+}
+.payment-item-content-benefit-bad,
+.payment-item-content-benefit-good {
+  text-align: right;
+  font-size: 10px;
+}
+.payment-item-content-benefit-bad {
+  color: rgb(238, 46, 8);
+}
+
+.payment-item-content-benefit-good {
+  color: rgb(8, 111, 238);
+}
+
+/* 3d card 부분 */
+.card3d-set-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.card3d-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 90%;
+  border: 2px solid #0000007c;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+.card3d-title {
+  width: 50%;
+}
+
+.card3d-img-individual {
+  width: 35vh;
+  filter: drop-shadow(5px 5px 5px #0000007c);
+}
